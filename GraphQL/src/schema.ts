@@ -19,6 +19,10 @@ export const typeDefs = gql`
   type Article {
     id: ID!
     title: String
+    content: String
+    tags: [String]
+    categories: [String]
+    likes: Int
     authorId: ID!
     author: User
     comments: [Comment]
@@ -27,7 +31,22 @@ export const typeDefs = gql`
   type Comment {
     id: ID!
     content: String
+    likes: Int
     articleId: ID!
     article: Article
+    userId: ID!
+    user: User
+  }
+
+  type Mutation{
+    createUser(name: String!): User
+    updateUser(id: ID!, name: String): User
+    deleteUser(id: ID!): User
+    createArticle (title: String, tags: [String], categories: [String], content: String, authorId: String): Article
+    updateArticle(id: ID!, title: String!, content: String!): Article
+    deleteArticle(id: ID!): Article
+    createComment(content: String!, articleId: ID!, userId: ID!): Comment
+    updateComment(id: ID!, content: String!): Comment
+    deleteComment(id: ID!): Comment
   }
 `;
