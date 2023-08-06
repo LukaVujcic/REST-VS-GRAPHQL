@@ -37,7 +37,7 @@ const resolvers = {
         throw new Error('User not found');
       }
       user.name = name;
-      
+
       return user;
     },
     deleteUser: (parent: any, { id }: { id: number }) => {
@@ -103,7 +103,7 @@ const resolvers = {
       return newComment;
     },
     updateComment: (parent: any, { id, content }: { id: number; content: string }) => {
-      const comment = comments.find((comment) => comment.id === id);
+      const comment = comments.find((comment) => comment.id === +id);
       if (!comment) {
         throw new Error('Comment not found');
       }
@@ -112,7 +112,7 @@ const resolvers = {
       return comment;
     },
     deleteComment: (parent: any, { id }: { id: number }) => {
-      const index = comments.findIndex((comment) => comment.id === id);
+      const index = comments.findIndex((comment) => comment.id === +id);
       if (index === -1) {
         throw new Error('Comment not found');
       }
