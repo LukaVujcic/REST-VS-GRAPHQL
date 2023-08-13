@@ -17,13 +17,13 @@ router.get('/:userId', (req: Request, res: Response) => {
     res.json(user);
 });
 
-router.post('/users', (req: Request, res: Response) => {
+router.post('/', (req: Request, res: Response) => {
     const { name } = req.body;
     const newUser = createUser(name);
     res.status(201).json(newUser);
 });
   
-router.put('/users/:userId', (req: Request, res: Response) => {
+router.put('/:userId', (req: Request, res: Response) => {
     const userId: number = parseInt(req.params.userId);
     const { name } = req.body;
     const success = updateUser(userId, name);
@@ -34,7 +34,7 @@ router.put('/users/:userId', (req: Request, res: Response) => {
     }
 });
   
-router.delete('/users/:userId', (req: Request, res: Response) => {
+router.delete('/:userId', (req: Request, res: Response) => {
     const userId: number = parseInt(req.params.userId);
     const success = deleteUser(userId);
     if (success) {

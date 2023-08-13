@@ -1,6 +1,6 @@
 import { Article } from '../models/article';
 
-// Sample data
+// Podaci
 let articles: Article[] = [
     { id: 1, title: 'Article 1', content: 'Content of Article1', tags: ['Tag1', 'Tag2'], categories: ['Category1'], likes: 0, authorId: 1 },
     { id: 2, title: 'Article 2', content: 'Content of Article2', tags: ['Tag3', 'Tag4'], categories: ['Category2','Category3'], likes: 0, authorId: 2 },

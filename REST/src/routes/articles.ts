@@ -55,7 +55,7 @@ router.delete('/:articleId', (req: Request, res: Response) => {
     }
 });
 
-router.post('/articles/:articleId/like', (req: Request, res: Response) => {
+router.post('/:articleId/like', (req: Request, res: Response) => {
     const articleId: number = parseInt(req.params.articleId);
     const success = likeArticle(articleId);
     if (success) {

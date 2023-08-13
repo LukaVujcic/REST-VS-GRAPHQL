@@ -1,6 +1,6 @@
 import { Comment } from '../models/comment';
 
-// Sample data
+// Podaci
 let comments: Comment[] = [
     { id: 1, content: 'Comment 1', articleId: 1, likes: 0, userId: 2 },
     { id: 2, content: 'Comment 2', articleId: 2, likes: 0, userId: 1 },
